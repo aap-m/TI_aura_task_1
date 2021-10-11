@@ -22,7 +22,7 @@
 ![html](https://github.com/aap-m/.....7.png)<br>
 
 Работа между компонентами:<br>
-1. Отправка атрибута строки инпут parent to child
+1. Отправка атрибута строки инпут parent to child<br>
 ![html](https://github.com/aap-m/.....8.png)<br>
 
 2. Запуск метода по кнопке фильтр в parent <br>
