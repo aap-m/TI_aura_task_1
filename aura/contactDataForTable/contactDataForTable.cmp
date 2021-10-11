@@ -1,0 +1,15 @@
+<aura:component controller="auraContactController">
+    
+    <aura:attribute name="parentData" type="List"/>
+    <aura:attribute name="allData" type="List" />
+
+    <aura:attribute name="passSearch" type="String"/> 
+
+    <aura:registerEvent name="Result" type="c:Result"/>
+
+    <aura:method name="childSearchMethod" action="{!c.handleClick}" access="public">  
+    </aura:method>
+
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+</aura:component>	
