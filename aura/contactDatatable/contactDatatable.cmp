@@ -1,0 +1,25 @@
+<aura:component controller="auraContactController" implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="searchFilter" type="String"/>
+
+    <aura:handler event="c:Result" action="{!c.getValueFromApplicationEvent}" />
+    <aura:attribute name="Get_Result" type="List"/>   
+    
+    <c:contactDataForTable aura:id="childCmp" passSearch="{!v.searchFilter}"/>
+
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <lightning:card title="Lightning Datatable for Contacts">
+        <lightning:layout>
+            <div class="slds-p-around_small">
+                <lightning:input placeholder="type first name..." label="SEARCH BY NAME" onchange="{! c.handleInput}"/>
+                <lightning:button variant="brand" label="Filter" title="Brand action" onclick="{! c.handleClick }" />
+                <lightning:datatable    data="{! v.Get_Result }"
+                                        columns="{! v.mycolumns }"
+                                        keyField="Id"
+                                        hideCheckboxColumn="true"/>
+            </div>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>	
